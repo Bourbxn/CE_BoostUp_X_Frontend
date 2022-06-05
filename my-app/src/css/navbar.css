@@ -3,7 +3,7 @@
 }
 
 .nav-menu {
-  @apply transform transition duration-150 text-white hover:scale-125;
+  @apply transform transition duration-200 text-white hover:scale-125;
 }
 
 .nav-menu-logout {
@@ -16,4 +16,8 @@
 
 .nav-logo-x{
   @apply text-5xl text-red-logo transform transition duration-1000 group-hover:scale-150 group-hover:text-amber-500
+}
+
+.nav-menu-active{
+  @apply border-b-4 border-red text-white;
 }

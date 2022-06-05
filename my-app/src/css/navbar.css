@@ -1,0 +1,19 @@
+.nav-layout{
+  @apply bg-transparent p-5 flex z-20 mx-10 py-5
+}
+
+.nav-menu {
+  @apply transform transition duration-150 text-white hover:scale-125;
+}
+
+.nav-menu-logout {
+  @apply transform transition duration-150 text-gray-400 hover:scale-125;
+}
+
+.nav-logo {
+  @apply mr-auto font-extrabold text-2xl text-white flex transform transition;
+}
+
+.nav-logo-x{
+  @apply text-5xl text-red-logo transform transition duration-1000 group-hover:scale-150 group-hover:text-amber-500
+}

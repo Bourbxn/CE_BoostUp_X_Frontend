@@ -8,6 +8,8 @@ module.exports = {
       },
       backgroundImage: {
         'app':"url('pictures/bgHome.png')",
+        'app-tasks':"url('pictures/bgTasks.png')",
+        'app-css':"url('../pictures/bgHome.png')",
       },
       fontFamily: {
         'anton':['Anton'],

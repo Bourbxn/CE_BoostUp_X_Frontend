@@ -11,3 +11,7 @@
 .app-body {
   @apply w-screen h-screen flex justify-center items-center text-white text-6xl
 }
+
+.tasks-layout {
+  @apply w-screen min-h-screen flex justify-center items-center text-white text-6xl bg-app-tasks bg-cover
+}

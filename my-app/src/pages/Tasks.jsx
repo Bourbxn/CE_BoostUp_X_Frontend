@@ -1,8 +1,9 @@
 import React from 'react'
+import '../css/tasks.css'
 
 const Tasks = () => {
   return (
-    <div className="app-body">TASKS</div>
+    <div className="tasks-layout">TASKS</div>
   )
 }
 

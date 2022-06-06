@@ -8,16 +8,18 @@ import Tasks from "./pages/Tasks";
 
 function App() {
   return (
-    <div className="app-layout">
+    <div>
       <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/tasks" element={<Tasks />} />
-          <Route path="/ranking" element={<Rangking />} />
-          <Route path="/ebook" element={<Ebook />} />
-          <Route path="/profile" element={<Profile />} />
-        </Routes>
+        <div className="app-layout">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/tasks" element={<Tasks />} />
+            <Route path="/ranking" element={<Rangking />} />
+            <Route path="/ebook" element={<Ebook />} />
+            <Route path="/profile" element={<Profile />} />
+          </Routes>
+        </div>
       </BrowserRouter>
     </div>
   );

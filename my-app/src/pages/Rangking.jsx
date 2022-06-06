@@ -2,7 +2,7 @@ import React from 'react'
 
 const Rangking = () => {
   return (
-    <div></div>
+    <div className="app-body">RANKING</div>
   )
 }
 

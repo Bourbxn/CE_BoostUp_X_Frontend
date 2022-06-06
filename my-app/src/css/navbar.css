@@ -1,5 +1,5 @@
 .nav-layout{
-  @apply bg-transparent p-5 flex z-20 mx-10 py-5
+  @apply bg-transparent p-5 flex z-20 mx-10 py-7
 }
 
 .nav-menu {

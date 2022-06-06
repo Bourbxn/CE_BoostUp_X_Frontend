@@ -17,12 +17,12 @@ const NavLogo = () => {
 
 const NavList = () => {
   const path = [
-    { key: 1, name: "HOME", to: "/", class: "link-underline link-underline-black text-white nav-menu" },
-    { key: 2, name: "TASKS", to: "/tasks", class: "link-underline link-underline-black text-white nav-menu" },
-    { key: 3, name: "RANKING", to: "/ranking", class: "link-underline link-underline-black text-white nav-menu" },
-    { key: 4, name: "EBOOK", to: "/ebook", class: "link-underline link-underline-black text-white nav-menu" },
-    { key: 5, name: "PROFILE", to: "/profile", class: "link-underline link-underline-black text-white nav-menu" },
-    { key: 6, name: "LOGOUT", to: "/logout", class: "link-underline link-underline-black text-white nav-menu" },
+    { key: 1, name: "HOME", to: "/", class: "nav-menu" },
+    { key: 2, name: "TASKS", to: "/tasks", class: "nav-menu" },
+    { key: 3, name: "RANKING", to: "/ranking", class: "nav-menu" },
+    { key: 4, name: "EBOOK", to: "/ebook", class: "nav-menu" },
+    { key: 5, name: "PROFILE", to: "/profile", class: "nav-menu" },
+    { key: 6, name: "LOGOUT", to: "/logout", class: "nav-menu" },
   ];
 
   const NavLinkActive = ({isActive}) => {

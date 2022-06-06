@@ -4,6 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  -ms-overflow-style: none;
+  letter-spacing: 0.07em;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
 .app-layout {
   @apply w-screen min-h-screen bg-app bg-cover font-anton;
 }
@@ -14,4 +22,8 @@
 
 .tasks-layout {
   @apply w-screen min-h-screen flex justify-center items-center text-white text-6xl bg-app-tasks bg-cover
+}
+
+.home-layout {
+  @apply w-screen min-h-screen flex justify-center items-center text-white bg-app-homeFix bg-cover h-[1800px]
 }

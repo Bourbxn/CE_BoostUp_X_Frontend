@@ -6,6 +6,9 @@ import Profile from "./pages/Profile";
 import Ranking from "./pages/Ranking";
 import Tasks from "./pages/Tasks";
 
+// TEMP
+import Submit from "./pages/Submit";
+
 function App() {
   return (
     <div>
@@ -18,6 +21,7 @@ function App() {
             <Route path="/ranking" element={<Ranking />} />
             <Route path="/ebook" element={<Ebook />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/submit" element={<Submit />} />
           </Routes>
         </div>
       </BrowserRouter>

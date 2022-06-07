@@ -20,6 +20,7 @@ const NavList = () => {
     { key: 4, name: "EBOOK", to: "/ebook", class: "nav-menu" },
     { key: 5, name: "PROFILE", to: "/profile", class: "nav-menu" },
     { key: 6, name: "LOGOUT", to: "/logout", class: "nav-menu" },
+    { key: 7, name: "SUBMIT", to: "/submit", class: "nav-menu" },
   ];
 
   const NavLinkActive = ({ isActive }) => {

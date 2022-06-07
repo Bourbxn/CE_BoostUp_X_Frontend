@@ -61,7 +61,7 @@ const NavList = () => {
 
 const Navbar = () => {
   return (
-    <nav className="nav-layout">
+    <nav className="nav-layout z-10">
       <div className="nav-control">
         <NavLogo />
         <NavList />

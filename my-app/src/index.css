@@ -25,5 +25,5 @@
 }
 
 .home-layout {
-  @apply w-screen min-h-screen flex justify-center items-center text-white bg-app-homeFix bg-cover h-[1800px]
+  @apply w-screen min-h-screen flex justify-center items-center text-white bg-app-home bg-cover h-[1800px]
 }

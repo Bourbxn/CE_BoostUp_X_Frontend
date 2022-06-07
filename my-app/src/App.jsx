@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import Ebook from "./pages/Ebook";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
-import Rangking from "./pages/Rangking";
+import Ranking from "./pages/Ranking";
 import Tasks from "./pages/Tasks";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/tasks" element={<Tasks />} />
-            <Route path="/ranking" element={<Rangking />} />
+            <Route path="/ranking" element={<Ranking />} />
             <Route path="/ebook" element={<Ebook />} />
             <Route path="/profile" element={<Profile />} />
           </Routes>

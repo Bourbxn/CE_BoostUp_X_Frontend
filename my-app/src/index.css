@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Kanit:wght@200;300&display=swap");
 
+@font-face {
+  font-family: Monomon;
+  src: url("fonts/SOV_monomon.ttf");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,4 +19,18 @@
 
 .tasks-layout {
   @apply w-screen min-h-screen flex justify-center items-center text-white text-6xl bg-app-tasks bg-cover
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  margin: 5px 0;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
 }

@@ -1,9 +1,11 @@
 module.exports = {
   content: ["./src/**/*.{html,js,jsx}"],
   theme: {
-    screen: {
-      'mobile':'414px',
-      'tablet':'1024px',
+    screens: {
+      'md': '960px',
+      'mb': {'max': '420px'},
+      'tb': {'min': '421px','max': '1024px'},
+      'pc': {'min': '1025px'},
     },
     extend: {
       colors: {
@@ -13,7 +15,9 @@ module.exports = {
       backgroundImage: {
         'app':"url('pictures/bgHome.png')",
         'app-tasks':"url('pictures/bgTasks.png')",
-        'app-home':"url('pictures/bgHomeNoPlanet.png')",
+        'app-home':"url('pictures/bgHome.png')",
+        'app-home-mobile':"url('pictures/bgHome(mobile).jpg')",
+        'app-home-tablet':"url('pictures/bgHome(tablet).jpg')",
         'app-css':"url('../pictures/bgHome.png')",
       },
       fontFamily: {
@@ -21,12 +25,15 @@ module.exports = {
       },
       keyframes: {
         star: {
-          '0%,100%': {width: '10px',height: '10px',opacity: '0'},
-          '50%': {width: '30px',height: '30px',opacity: '1' },
+          '0%' :{transform: 'scale(1, 1)',opacity: '0'},   
+          '50%' :{transform: 'scale(3, 3)',opacity: '1'},
+          '100%' :{transform: 'scale(1, 1)',opacity: '0'},
         },
       },
       animation: {
-        'star-amplify': 'star 2s linear infinite',
+        'star1': 'star 2s linear infinite',
+        'star2': 'star 2s linear 1s infinite',
+        'star3': 'star 2s linear 0.5s infinite'
       },
     },
   },

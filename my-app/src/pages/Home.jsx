@@ -23,7 +23,16 @@ const HomeComponent = () => {
                <img src={Mercury} alt='Mercury' className=' mercury' />
                <img src={Rocket} alt='Rocket' className=' rocket' />
                <img src={Clound} alt='Clound' className=' clound' />
-               <img src={Star} alt='Star1' className=' star01' />
+               <img src={Star} alt='Star1' className=' star star01' />
+               <img src={Star} alt='Star2' className=' star star02' />
+               <img src={Star} alt='Star3' className=' star star03' />
+               <img src={Star} alt='Star4' className=' star star04' />
+               <img src={Star} alt='Star5' className=' star star05' />
+               <img src={Star} alt='Star6' className=' star star06' />
+               <img src={Star} alt='Star7' className=' star star07' />
+               <img src={Star} alt='Star8' className=' star star08' />
+               <img src={Star} alt='Star9' className=' star star09' />
+               <img src={Star} alt='Star9' className=' star star10' />
           </div>
      )
 }

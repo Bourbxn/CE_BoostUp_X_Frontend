@@ -70,7 +70,6 @@ const Home = () => {
             <CodeMirror
               value={code}
               height="500px"
-              width="650px"
               extensions={[cpp()]}
               theme="dark"
               placeholder="Enter your code..."

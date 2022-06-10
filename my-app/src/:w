@@ -10,13 +10,9 @@
 }
 
 .wrapper {
-  @apply w-screen min-h-screen flex;
+  @apply flex w-full h-min-screen;
   @apply flex-col lg:flex-row;
-  @apply space-x-0 lg:space-x-3;
-  @apply space-y-3 lg:space-y-0;
-
-  padding: 10px;
-  padding-top: 100px;
+  @apply space-y-4 lg:space-x-4;
 }
 
 /*-----------------*
@@ -25,8 +21,7 @@
 
 /* Wrapper */
 .problem {
-  @apply flex flex-col;
-  @apply space-y-3;
+  @apply flex flex-col space-y-4;
 
   font-family: Monomon;
   color: var(--white);
@@ -36,7 +31,7 @@
 .problem > .topic {
   @apply basis-1/2 py-4 px-6;
   @apply rounded-3xl;
-
+  
   background: var(--bg-slate);
 }
 .problem > .topic > .header {
@@ -56,10 +51,7 @@
 
 /* Input / Output */
 .problem > .input-output {
-  @apply flex;
-  @apply flex-col md:flex-row;
-  @apply space-x-0 md:space-x-3;
-  @apply space-y-3 md:space-y-0;
+  @apply flex flex-row space-x-4;
   @apply basis-1/2;
 
   height: 100px;
@@ -140,14 +132,12 @@
   width: 100%;
   overflow-x: auto;
 }
-
 .cm-editor {
   @apply rounded-xl px-2 py-2;
-  @apply w-full lg:w-[40vw];
 
+  width: 50vw;
   background: var(--bg-slate-darker);
 }
-
 .cm-line {
   font-family: Monomon !important;
   font-size: 18px !important;
@@ -179,4 +169,3 @@
 .submit > button:hover {
   background: var(--bg-slate-lighter);
 }
-

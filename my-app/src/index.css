@@ -13,24 +13,11 @@
   @apply w-screen min-h-screen bg-app bg-cover font-anton;
 }
 
-.app-body {
-  @apply w-screen h-screen flex justify-center items-center text-white text-6xl
-}
-
 .tasks-layout {
   @apply w-screen min-h-screen flex justify-center items-center text-white text-6xl bg-app-tasks bg-cover
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  margin: 5px 0;
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
+  width: 0;
+  height: 0;
 }

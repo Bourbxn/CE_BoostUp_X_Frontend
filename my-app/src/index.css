@@ -13,5 +13,5 @@
 }
 
 .tasks-layout {
-  @apply w-screen min-h-screen flex justify-center items-center text-white text-6xl bg-app-tasks bg-cover
+  @apply w-screen min-h-screen text-white pt-[100px] bg-app-tasks bg-contain bg-repeat-round
 }

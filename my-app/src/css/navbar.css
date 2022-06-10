@@ -3,7 +3,7 @@
 }
 
 .nav-control{
-  @apply md:flex items-center justify-between bg-transparent py-4 md:px-10 px-7 pb-10
+  @apply md:flex items-center justify-between bg-transparent py-4 md:px-10 px-7
 }
 
 .nav-menu {

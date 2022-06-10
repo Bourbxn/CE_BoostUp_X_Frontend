@@ -8,10 +8,6 @@
   @apply w-screen min-h-screen bg-app bg-cover font-anton;
 }
 
-.app-body {
-  @apply w-screen h-screen flex justify-center items-center text-white text-6xl
-}
-
 .tasks-layout {
   @apply w-screen min-h-screen text-white pt-[100px] bg-app-tasks bg-contain bg-repeat-round
 }

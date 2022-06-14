@@ -61,6 +61,7 @@ const Home = () => {
           {key: 1, data: 'T', style: 'card-1'},
           {key: 2, data: 'O', style: 'card-2'},
           {key: 3, data: 'P', style: 'card-3'}
+          
      ]
 
      return (

@@ -27,5 +27,6 @@
 .home-layout {
   @apply w-screen min-h-screen flex justify-center items-center text-white bg-app-home-mobile bg-cover h-[1512px]
   tb:bg-app-home-tablet tb:h-[1366px]
-  pc:bg-app-home  pc:h-[1800px]
+  pc2:bg-app-home pc2:h-[1800px] pc2:bg-cover
+  pc:bg-app-home pc:h-[1800px] pc:bg-cover
 }

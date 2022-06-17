@@ -1,6 +1,8 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from 'react-router-dom'
 import '../css/home.css'
+import axios from "axios"
+import { useEffect } from "react"
 
 import Mars from '../pictures/homeImage/Mars.png'
 import Pluto from '../pictures/homeImage/Pluto.png'
@@ -57,11 +59,21 @@ const Top3Card = (props) => {
 
 const Home = () => {
 
-     const data = [
-          {key: 1, data: 'T', style: 'card-1'},
-          {key: 2, data: 'O', style: 'card-2'},
-          {key: 3, data: 'P', style: 'card-3'}
-          
+     // url api
+     // const url = ""
+
+     // const [data,setData] = useState(null)
+
+     // useEffect(() => {
+     //      axios.get(url).then((response) => {
+     //           setData(response)
+     //      })
+     // }, [])
+
+     const top3 = [
+          {key: 1, name: 'T', style: 'card-1', planet: null, score: null},
+          {key: 2, name: 'O', style: 'card-2', planet: null, score: null},
+          {key: 3, name: 'P', style: 'card-3', planet: null, score: null}
      ]
 
      return (
@@ -84,7 +96,7 @@ const Home = () => {
                Top 3 ranking
                </p>
 
-               <Top3Card top3={data} />
+               <Top3Card top3={top3} />
           </div>
      );
 };

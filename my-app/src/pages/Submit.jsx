@@ -1,109 +1,146 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { useLocation } from "react-router-dom";
+
 import "../css/submit.css";
 
 import CodeMirror from "@uiw/react-codemirror";
 import { cpp } from "@codemirror/lang-cpp";
 
+let json = {
+  userId: "62a4b0a81a443f1fa5ae06f0",
+  questionId: "6299c0597a7ed0113ea80664",
+  sourceCode: "int main() { return 1; }"
+};
+const result = fetch("https://compile.bxdman.com/compile", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MmE0YjBhODFhNDQzZjFmYTVhZTA2ZjAiLCJ1c2VybmFtZSI6InVzZXI0IiwiaWF0IjoxNjU0OTY0Mjk3LCJleHAiOjE2NTU1NjkwOTd9.00cS2kAJU3iyy_acusz5BgkH1euKQAMP3VNx6sqLeLs"
+  },
+  body: JSON.stringify(json),
+})
+  .then(res => res.json())
+  .then((result) => {
+  console.log(result);
+})
+
 // For Backend !
-let problemHeader = "Rocket Altitude";
-let problem = `น้อง ๆ เคยขึ้นจรวจมั้ยครับ 5555555 พี่เนี่ยนะ เคยขึ้นจรวจครั้งนึงไปดาวอังคาร คราวเนี้ย เวลาเราขึ้นไปสู่ชั้นบรรยากาศต่าง ๆ เนี่ย มันก็จะมีจอคอยบอกความสูงของจรวจเราใช่มะ ก็คือจะเป็นตัวเลขขึ้นตามนี้ 1982, 2020, 2043, 2130 เมตรไปเรื่อย ๆ
-
-ปัญหามันคืออย่างนี้ พี่อะ ต้องคอยดูสถานการณ์ว่า จรวดมันมีแนวโน้มว่าจะตกมั้ย ไม่งั้นถ้าอยู่ดี ๆ ไม่มีใครเฝ้า จรวดมันน้ำมันหมดกระทันหันแล้วพี่ตกก็ตายพอดี
-
-วิธีทำคือ น้องต้องนับจำนวนครั้งที่ความสูงมันลดลง จากความสูงครั้งก่อนหน้า (มันไม่มีความสูงก่อนหน้าความสูงครั้งแรก) ในตัวอย่างดังนี้เลย
-
-1982 (N/A ไม่มีความสูงก่อนหน้า)
-2020 (เพิ่มขึ้น)
-2043 (เพิ่มขึ้น)
-2130 (เพิ่มขึ้น)
-2112 (ลดลง)
-2230 (เพิ่มขึ้น)
-2342 (เพิ่มขึ้น)
-2432 (เพิ่มขึ้น)
-2420 (ลดลง)
-2444 (เพิ่มขึ้น)
-
-จากตัวอย่างเนี่ย มันมีผลการวัดทั้งหมด 2 ครั้ง ที่ความสูงมันลดลง
-
-ให้น้องเขียนโปรแกรมหาจำนวนครั้งที่ความสูงมันลดลงให้หน่อยครับ แหะ ๆ`;
-
-let input=`1982
-2020
-2043
-2130
-2112
-2230
-2228
-2332
-2420
-2410`;
-let output=`3`;
-
-let result = "P-PP-P****";
 let code = "";
 
 const Home = () => {
-  let resultToShow = result;
-  resultToShow = beautify(resultToShow);
-  return (
-    <div className="app-body">
-      <div className="wrapper">
-        <div className="problem">
-          <div className="topic">
-            <div className="header"><span>{problemHeader}</span></div>
-            <div className="detail">{problem}</div>
-          </div>
-          <div className="input-output">
-            <div className="input">
-              <div className="header">Input</div>
-              <div className="detail">{input}</div>
-            </div>
-            <div className="output">
-              <div className="header">Output</div>
-              <div className="detail">{output}</div>
-            </div>
-          </div>
+  let query = useQuery();
+
+  let questionID = query.get("id");
+  if (!questionID) questionID = "6299c0167a7ed0113ea8065c";
+
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetch("https://api.bxdman.com/question/" + questionID)
+    .then(res => res.json())
+    .then((result) => {
+      setIsLoaded(true);
+      setItems(result);
+    }, (error) => {
+      setIsLoaded(true);
+      setError(error);
+    })
+  }, [])
+
+  let rankText = "ง่ายมาก";
+  if (items.rank === 2) rankText = "ง่าย";
+  if (items.rank === 3) rankText = "ปานกลาง";
+  if (items.rank === 4) rankText = "ยาก";
+  if (items.rank === 5) rankText = "ยากมาก";
+
+  if (error)
+    return <div className="app-body">Invalid question id.</div>
+  else if (isLoaded) {
+    let examples = [];
+    for (let i = 0; i < 3; i++) {
+      examples.push(
+        <div>
+        <h2>ตัวอย่างที่ {i+1}:</h2>
+        <code>
+          <div><h1>ข้อมูลนำเข้า:</h1><p>{items.ex_input[i]}</p></div><br/>
+          <div><h1>ข้อมูลขาออก:</h1><p>{items.ex_output[i]}</p></div>
+        </code>
         </div>
-        <div className="editor">
-          <div className="result">{resultToShow}</div>
-          <div className="text-editor">
+      );
+    }
+    let hint = "ไม่มี";
+    if (items.note) hint = items.note;
+
+    return (
+      <div className="app-body">
+        <div className="wrapper">
+          <div className="problem">
+            <div>
+              <Tabs>
+                <TabList className="problem-tab">
+                  <Tab className="problem-tab-button">รายละเอียด</Tab>
+                  <Tab className="problem-tab-button">รูปภาพ</Tab>
+                  <Tab className="problem-tab-button">ผลลัพธ์</Tab>
+                </TabList>
+                <div className="problem-contents">
+                   <TabPanel className="problem-content">
+                     <h1>
+                       # {items.title} <span>[{items.unit}] ~ {items.issuer}</span>
+                       <div><span>{rankText}</span> • ผ่านแล้ว {items.finished} คน • <a target="_blank" href={items.pdfLink}>[PDF]</a></div>
+                     </h1>
+                     <hr/>
+                     <p>{items.detail}</p>
+                     <br/>
+                     {examples}
+                     <br/>
+                     <h2>ข้อมูลขาเข้า:</h2>
+                     <div><code><div>{items.detail_input}</div></code></div>
+                     <br/>
+                     <h2>ข้อมูลขาออก:</h2>
+                     <div><code><div>{items.detail_output}</div></code></div>
+                     <br/>
+                     <h2>คำใบ้:</h2>
+                     <p>{hint}</p>
+                   </TabPanel>
+                   <TabPanel className="problem-content">
+                     <div className="none">- ไม่มีรูปภาพ -</div>
+                   </TabPanel>
+                   <TabPanel className="problem-content">
+                     <div className="none">- คุณยังไม่ได้ส่งคำตอบ -</div>
+                   </TabPanel>
+                </div>
+              </Tabs>
+            </div>
+          </div>
+          <div className="editor">
             <CodeMirror
               value={code}
-              height="500px"
+              height="580px"
               extensions={[cpp()]}
               theme="dark"
-              placeholder="Enter your code..."
+              placeholder="เขียนโปรแกรมของคุณ..."
               onChange={(value) => {
                 code = value;
                 console.log(code);
               }}
               autoFocus="true"
             />
-          </div>
-          <div className="submit">
-            <button>Submit</button>
+            <div className="submit">
+              <button>[ส่งคำตอบ]</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
-export default Home
+export default Home;
 
-// Function to convert boring result to colorful result
-let beautify = (str) => {
-  // Function for span wrapping
-  let addSpan = (content, css) => {
-    return <span className={css}>{content}</span>;
-  }
+function useQuery() {
+  const { search } = useLocation();
 
-  // Construct new result
-  let result = [];
-  for (let i in str) {
-    let c = str[i]
-         if (c === "P") result.push(addSpan(c, "white")); 
-    else if (c === "-") result.push(addSpan(c, "red"));
-    else result.push(<span>{c}</span>);
-  }
-  return result;
+  return React.useMemo(() => new URLSearchParams(search), [search]);
 }

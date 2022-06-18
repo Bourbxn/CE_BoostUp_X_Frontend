@@ -10,14 +10,21 @@
 @tailwind utilities;
 
 .app-layout {
-  @apply w-screen min-h-screen bg-app bg-cover font-anton;
+  @apply w-full min-h-screen bg-app bg-cover font-anton;
 }
-
 .tasks-layout {
   @apply w-screen min-h-screen flex justify-center items-center text-white text-6xl bg-app-tasks bg-cover
 }
 
-::-webkit-scrollbar {
-  width: 0;
-  height: 0;
+*::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+*::-webkit-scrollbar-track {
+  background: #transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--red);
+  border-radius: 20px;
 }

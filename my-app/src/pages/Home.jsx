@@ -51,7 +51,7 @@ const Top3Card = (props) => {
      return (
           <div className=' top-3-box'>
                {top3.map((data) => {
-                    return <div key={data.key} className={data.style} >{data.data}</div>
+                    return <div key={data.key} className={data.style} >{data.name}</div>
                })}
           </div>
      )

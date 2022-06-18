@@ -1,4 +1,5 @@
-import React,{useState} from "react";
+import React,{useState,useEffect,useRef} from "react";
+import axios from "axios";
 
 import '../css/ranking.css'
 import jupiter from '../pictures/Jupiter.png';
@@ -11,26 +12,53 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import {faCircleArrowRight} from '@fortawesome/free-solid-svg-icons'
 
+const token ='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MmE0YjA5MjFhNDQzZjFmYTVhZTA2ZTciLCJ1c2VybmFtZSI6InVzZXIxIiwiaWF0IjoxNjU0OTY0MTYyLCJleHAiOjE2NTU1Njg5NjJ9.EC5VD81v98JzSmFlQl3j4hAkkoOy6z5oEr37DKIzfas';
+const baseUrl ='https://api.bxdman.com/users';
+
+const authAxios = axios.create({
+    baseURL: baseUrl,
+    headers:{
+        Authorization: `Bearer ${token}`
+    }
+});
+
 function RankingPage(){
     const [curPage,setCurPage] = useState(1);
-    
-    const randPlayer=(i)=>{
-        return{
-            rank : i,
-            playerName : "Playername",
-            home : Math.floor(Math.random()*6),
-            point : Math.floor(Math.random()*10000)
-        }
-    }
+    const [fetchDone,setFetchDone] = useState(false);
+    const [newScoreBoard,setNewScoreBoard] = useState([]);
 
-    const range = (len) =>{
-        const arr=[];
-        for(let i=0;i<len;i++){
-            arr.push(i);
-            arr[i] = randPlayer(i+1);
-        }
-        return arr;
-    }
+    useEffect(()=>{
+        const fetch = async()=>{
+            try{
+                const result = await authAxios.get(`${baseUrl}`);
+                setNewScoreBoard(result.data);
+                setFetchDone(true);
+                console.log("ez");
+            }
+            catch{
+                alert("Fetch error");
+            }
+        };
+        fetch();
+    },[]);
+    
+    // const randPlayer=(i)=>{
+    //     return{
+    //         rank : i,
+    //         playerName : "Playername",
+    //         home : Math.floor(Math.random()*6),
+    //         point : Math.floor(Math.random()*10000)
+    //     }
+    // }
+
+    // const range = (len) =>{
+    //     const arr=[];
+    //     for(let i=0;i<len;i++){
+    //         arr.push(i);
+    //         arr[i] = randPlayer(i+1);
+    //     }
+    //     return arr;
+    // }
     
     const scoreBoard = (curPage,arr) =>{
         const borad=[];
@@ -57,48 +85,36 @@ function RankingPage(){
     }
 
     const Home = (home) => {
-        switch(home){
+        switch (home) {
             case 0:
                 return (
-                    <div className="flex_center">
-                        <img src={jupiter} alt="Jupiter" className="home_img"/>
-                    </div>
+                    <img src={jupiter} alt="Jupiter" className="home_img" />
                 );
             case 1:
                 return (
-                    <div className="flex_center">
-                            <img src={mars} alt="Mars" className="home_img"/>
-                    </div>
+                    <img src={mars} alt="Mars" className="home_img" />
                 );
             case 2:
                 return (
-                    <div className="flex_center">
-                        <img src={mercury} alt="Mercury" className="home_img"/>
-                    </div>
+                    <img src={mercury} alt="Mercury" className="home_img" />
                 );
             case 3:
                 return (
-                    <div className="flex_center">
-                        <img src={naptune} alt="Naptune" className="home_img"/>
-                    </div>
+                    <img src={naptune} alt="Naptune" className="home_img" />
                 );
             case 4:
                 return (
-                    <div className="flex_center">
-                        <img src={pluto} alt="Pluto" className="home_img"/>
-                    </div>
+                    <img src={pluto} alt="Pluto" className="home_img" />
                 );
             case 5:
                 return (
-                    <div className="flex_center">
-                        <img src={saturn} alt="Saturn" className="home_img_saturn"/>
-                    </div>
+                    <img src={saturn} alt="Saturn" className="home_img_saturn" />
                 );
         }
     }
 
     const increasePage =() =>{
-        if(curPage != Math.ceil(startArr.length/10)){
+        if(curPage != Math.ceil(newScoreBoard.length/10)){
             console.log(curPage);
             setCurPage(curPage+1);
         }
@@ -111,14 +127,17 @@ function RankingPage(){
         }
     }
 
-    const startArr= range(22);
-    console.log(startArr);
-    const showScore = scoreBoard(curPage,startArr);
+    // const startArr = range(23);
+    // console.log(startArr);
+    const showScore = scoreBoard(curPage, newScoreBoard);
     console.log(showScore);
+    console.log(newScoreBoard.length);
+
+    
 
     return (
+        fetchDone ? (
         <div className="scoreBoard bg">
-            hey
             <table >
                 <thead>
                     <tr>
@@ -130,31 +149,38 @@ function RankingPage(){
                     </tr>
                 </thead>
                 <tbody>
-                    {showScore.map(d =>{
+                {showScore.map(d => {
                         return (
                             <tr>
-                                <th>{d.rank}</th>
-                                <th>{d.playerName}</th>
-                                <th>{Home(d.home)}</th>
-                                <th>{d.point}</th>
-                                <th>Points</th>
+                                <th>{d.finished}</th>
+                                <th>{d.name}</th>
+                                <th>
+                                    <div className="flex_center">
+                                        {Home(d.group)}
+                                    </div>
+                                </th>
+                                <th>{d.score}</th>
+                                {/* <th>Points</th> */}
                             </tr>
                         )
                     })}
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th colSpan={5}>
+                        <th colSpan={4}>
                             <div className="flex_end gap-x-4">
                                 <button onClick={decreasePage}><FontAwesomeIcon icon={faCircleArrowLeft}></FontAwesomeIcon></button>
-                                <h1>{curPage} / {Math.ceil(startArr.length/10)}</h1>
+                                <h1>{curPage} / {Math.ceil(newScoreBoard.length/10)}</h1>
                                 <button onClick={increasePage}><FontAwesomeIcon icon={faCircleArrowRight}></FontAwesomeIcon></button>
                             </div>
                         </th>
                     </tr>
                 </tfoot>
             </table>
-        </div>
+        </div>):
+        (<div>
+            <h1>loading</h1>
+        </div>)
     );
 }
 

@@ -1,9 +1,9 @@
 .nav-layout{
-  @apply w-full fixed top-0 left-0
+  @apply w-full fixed z-[5] top-0 left-0
 }
 
 .nav-control{
-  @apply md:flex items-center justify-between bg-transparent py-4 md:px-10 px-7
+  @apply md:flex items-center justify-between bg-transparent py-4 md:px-10 px-7 pb-10
 }
 
 .nav-menu {

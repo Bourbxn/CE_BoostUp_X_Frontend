@@ -1,0 +1,146 @@
+.top-3-box {
+     @apply z-[3] absolute top-[834px]
+     tb:top-[1010px]
+     pc2:top-[1269px]
+     pc:top-[1269px]
+}
+
+.card-1 {
+     @apply w-[150px] h-[200px] bg-[#B9B9B9] rounded-[15px] text-white text-center text-[64px] leading-[226px]
+     tb:absolute tb:right-[191px] tb:w-[200px] tb:h-[300px] tb:text-[96px] tb:leading-[145px] tb:pt-[75.6px]
+     pc2:absolute pc2:right-[206.5px] pc2:w-[300px] pc2:h-[450px] pc2:text-[150px] pc2:pt-[115px]
+     pc:absolute pc:right-[316.5px] pc:w-[300px] pc:h-[450px] pc:text-[150px] pc:pt-[115px]
+}
+
+.card-2 {
+     @apply w-[150px] h-[200px] bg-[#B9B9B9] rounded-[15px] text-white text-center text-[64px] leading-[226px] mt-[22px]
+     tb:absolute tb:right-[-95.5px] tb:w-[200px] tb:h-[300px] tb:text-[96px] tb:leading-[145px] tb:pt-[75.6px] tb:mt-0
+     pc2:absolute pc2:right-[-150px] pc2:w-[300px] pc2:h-[450px] pc2:text-[150px] pc2:pt-[115px] pc2:mt-0
+     pc:absolute pc:right-[-150px] pc:w-[300px] pc:h-[450px] pc:text-[150px] pc:pt-[115px] pc:mt-0
+}
+
+.card-3 {
+     @apply w-[150px] h-[200px] bg-[#B9B9B9] rounded-[15px] text-white text-center text-[64px] leading-[226px] mt-[22px]
+     tb:absolute tb:w-[200px] tb:h-[300px] tb:left-[191px] tb:text-[96px] tb:leading-[145px] tb:pt-[75.6px] tb:mt-0
+     pc2:absolute pc2:left-[203.5px] pc2:w-[300px] pc2:h-[450px] pc2:text-[150px] pc2:pt-[115px] pc2:mt-0
+     pc:absolute pc:left-[313.5px] pc:w-[300px] pc:h-[450px] pc:text-[150px] pc:pt-[115px] pc:mt-0
+}
+
+.button-getStart {
+     @apply z-[3] top-[200px] w-[130px] h-[50px] text-[20px] text-[#21B921] leading-[22px]
+     rounded-[15px] border-[1px] border-solid border-[#21B921] box-border duration-100 ease-linear
+     hover:bg-[#21B921] hover:text-white
+
+     tb:w-[170px] tb:h-[60px] tb:text-[25px]
+
+     pc2:w-[219px] pc2:h-[72px] pc2:text-[30px] pc2:leading-[58px] pc2:rounded-[20px]
+
+     pc:w-[219px] pc:h-[72px] pc:text-[30px] pc:leading-[58px] pc:rounded-[20px]
+}
+
+.text-1 {
+     @apply z-[3] absolute w-[100vw] h-[211px] top-[328px] text-white text-[32px] text-center leading-[48px]
+     tb:top-[364px] tb:text-[48px] tb:leading-[72px]
+     pc2:text-[64px] pc2:leading-[96px] pc2:top-[481px]
+     pc:text-[64px] pc:leading-[96px] pc:top-[481px]
+}
+
+.text-2 {
+     @apply z-[3] absolute w-[100vw] top-[791px] text-white text-[20px] text-center leading-[22.5px]
+     tb:top-[914px] tb:text-[30px] tb:leading-[45px]
+     pc2:top-[1190px] pc2:text-[30px] pc2:leading-[45px]
+     pc:top-[1190px] pc:text-[30px] pc:leading-[45px]
+}
+
+.mars {
+     @apply z-[2] absolute top-[385px] left-0 w-0 h-0
+     pc2:w-[231px] pc2:h-[231px]
+     pc:w-[271px] pc:h-[271px]
+}
+
+.pluto {
+     @apply z-0 absolute top-[686px] left-[20%] w-0 h-0
+     pc2:w-[200px] pc2:h-[201px]
+     pc:w-[243px] pc:h-[244px]
+}
+
+.jupiter {
+     @apply z-0 absolute top-[436px] right-[4%] w-0 h-0 
+     pc2:w-[425px] pc2:h-[426px]
+     pc:w-[465px] pc:h-[466px]
+}
+
+.neptune {
+     @apply z-[2] absolute top-[797px] left-[45%] w-0 h-0
+     pc2:w-[170px] pc2:h-[170px]
+     pc:w-[210px] pc:h-[210px]
+}
+
+.saturn {
+     @apply z-0 absolute top-[158px] right-[340.72px] w-0 h-0 rotate-[-12.68deg]
+     pc2:w-[480.37px] pc2:h-[188.01px]
+     pc:w-[520.37px] pc:h-[228.01px]
+}
+
+.mercury {
+     @apply z-0 absolute top-[242px] right-[98px] w-0 h-0
+     pc2:w-[97px] pc2:h-[97px]
+     pc:w-[137px] pc:h-[137px]
+}
+
+/* .rocket {
+     @apply z-[1] absolute top-[945px] left-[1270px] w-0 h-0
+     pc:w-[475px] pc:h-[187px]
+} */
+
+.clound {
+     @apply z-0 absolute top-0 left-0 w-0 h-0
+     pc2:w-[1800px] pc2:h-[1680px]
+     pc:w-[1920px] pc:h-[1800px]
+}
+
+.star {
+     @apply z-0 absolute origin-center w-0 h-0
+     pc2:w-[10px] pc2:h-[10px]
+     pc:w-[10px] pc:h-[10px]
+}
+
+.star01 {
+     @apply top-[150px] left-[350px] animate-star1
+}
+
+.star02 {
+     @apply top-[100px] right-[350px] animate-star1
+}
+
+.star03 {
+     @apply top-[1230px] left-[480px] animate-star1
+}
+
+.star04 {
+     @apply top-[1675px] right-[180px] animate-star1
+}
+
+.star05 {
+     @apply top-[300px] left-[700px] animate-star2
+}
+
+.star06 {
+     @apply top-[800px] right-[600px] animate-star2
+}
+
+.star07 {
+     @apply top-[1550px] left-[250px] animate-star2
+}
+
+.star08 {
+     @apply top-[480px] left-[300px] animate-star3
+}
+
+.star09 {
+     @apply top-[620px] left-[530px] animate-star3
+}
+
+.star10 {
+     @apply top-[1400px] right-[180px] animate-star3
+}

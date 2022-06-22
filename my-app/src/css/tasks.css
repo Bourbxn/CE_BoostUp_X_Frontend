@@ -1,0 +1,7 @@
+.dropdown-units{
+    @apply hover:text-white hover:text-opacity-75 text-opacity-100 cursor-pointer
+}
+
+.dropdown-animate{
+    @apply transition-all duration-500 ease-in
+}

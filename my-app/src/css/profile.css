@@ -1,0 +1,68 @@
+.header{
+  background-color: #644CF9;
+}
+
+.card{
+  background-color: #2D374A;
+}
+
+.wrapper{
+  @apply flex w-screen flex-col md:flex-row space-y-6 md:space-y-0 space-x-0 md:space-x-6 px-10;
+}
+
+.your-profile{
+  @apply flex flex-col basis-1/2;
+}
+
+.your-profile-header{
+  @apply p-4 text-center text-white header rounded-t-2xl text-2xl md:text-4xl;
+}
+
+.your-profile-layout{
+  @apply flex p-4 card rounded-b-2xl flex-col h-full;
+}
+
+.your-profile-user{
+  @apply flex;
+  @apply flex-col md:flex-row ;
+  @apply justify-center md:place-content-around;
+}
+
+.your-profile-text{
+  @apply flex justify-center pt-3 text-xl md:text-3xl;
+}
+
+.your-profile-pass{
+  @apply bg-blue-500 text-white text-xl md:text-3xl rounded hover:bg-white hover:text-blue-500 px-3 py-3;
+}
+
+.your-stat{
+  @apply flex flex-col;
+  @apply basis-1/2;
+  @apply space-y-6;
+  
+}
+
+.your-stat-header{
+  @apply p-4 text-center text-white header rounded-t-2xl text-2xl md:text-4xl;
+}
+
+.your-stat-layout{
+  @apply flex p-4 card;
+  @apply rounded-b-2xl;
+  @apply flex-col h-max;
+  height: 210px;
+}
+
+.your-stat-score{
+  @apply flex p-4 card;
+  @apply rounded-b-2xl;
+  @apply flex-row h-max;
+  @apply place-content-around;
+  height: 200px;
+}
+
+.your-stat-text{
+  @apply  flex justify-center pt-3 text-xl md:text-3xl;
+}
+

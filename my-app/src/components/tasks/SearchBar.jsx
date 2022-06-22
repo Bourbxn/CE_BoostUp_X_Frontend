@@ -1,9 +1,8 @@
 import React from "react";
-import { IoSearchOutline, IoCaretDown } from "react-icons/io5";
-import "../css/tasks.css";
-import AllUnits from "./SearchBar/AllUnits";
-import Completed from "./SearchBar/Completed";
-import SearchName from "./SearchBar/SearchName";
+import "../../css/tasks.css";
+import AllUnits from "./AllUnits";
+import Completed from "./Completed";
+import SearchName from "./SearchName";
 
 const VerticalLine = () => {
   return (

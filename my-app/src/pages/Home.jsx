@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "../css/home.css";
-import axios from "axios";
-import { useEffect } from "react";
+//import axios from "axios";
+//import { useEffect,useState } from "react";
 
 import Mars from "../pictures/homeImage/Mars.png";
 import Pluto from "../pictures/homeImage/Pluto.png";

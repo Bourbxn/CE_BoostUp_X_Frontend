@@ -26,3 +26,8 @@
   pc2:bg-app-home pc2:h-[1800px] pc2:bg-cover
   pc:bg-app-home pc:h-[1800px] pc:bg-cover
 }
+
+.profile-layout{
+  @apply w-screen min-h-screen bg-app-home bg-cover bg-repeat pt-[120px] pb-10
+}
+

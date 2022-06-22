@@ -24,6 +24,7 @@ module.exports = {
         'app-home-mobile':"url('pictures/bgHome(mobile).jpg')",
         'app-home-tablet':"url('pictures/bgHome(tablet).jpg')",
         'app-css':"url('../pictures/bgHome.png')",
+        
       },
       fontFamily: {
         'anton':['Anton'],

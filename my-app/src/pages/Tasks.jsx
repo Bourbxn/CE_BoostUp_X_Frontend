@@ -1,6 +1,6 @@
 import React from "react";
-import MissionBox from "../components/MissionBox";
-import SearchBar from "../components/SearchBar";
+import MissionBox from "../components/tasks/MissionBox";
+import SearchBar from "../components/tasks/SearchBar";
 import "../css/tasks.css";
 
 const Tasks = () => {

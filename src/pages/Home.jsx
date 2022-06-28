@@ -15,16 +15,16 @@ import Mercury from "../pictures/homeImage/Mercury.png";
 import Rocket from "../pictures/homeImage/cloundWithRocket.png";
 import Star from "../pictures/homeImage/star.png";
 const Home = () => {
-  const rankQuery = useGetTopRankQuery();
-  const dispatch = useDispatch();
-  const userQuery = useSelector(userSelector);
-  useEffect(() => {
-    if (!userQuery.error && !userQuery.loading) {
-      dispatch(fetchUser());
-    }
-  }, [dispatch]);
+  // const rankQuery = useGetTopRankQuery();
+  // const dispatch = useDispatch();
+  // const userQuery = useSelector(userSelector);
+  // useEffect(() => {
+  //   if (!userQuery.error && !userQuery.loading) {
+  //     dispatch(fetchUser());
+  //   }
+  // }, [dispatch]);
 
-  return userQuery.user ? (
+  return (
     <Layout>
       <div>
         <div className="text-center relative mt-40 z-10 hero">
@@ -61,8 +61,6 @@ const Home = () => {
         </div>
       </div>
     </Layout>
-  ) : (
-    <Loading />
   );
 };
 

@@ -7,6 +7,10 @@
   -ms-overflow-style: none;
   letter-spacing: 0.07em;
 }
+body {
+  background-color: #0F142C;
+}
+
 .input-form {
   @apply text-black p-4 w-full bg-gray-300 rounded-r-lg border transition-colors focus:bg-white focus:outline-none focus:shadow-xl;
 }
@@ -15,23 +19,4 @@
 }
 ::-webkit-scrollbar {
   display: none;
-}
-
-.app-layout {
-  @apply w-screen min-h-screen bg-app bg-cover;
-}
-
-.tasks-layout {
-  @apply w-screen min-h-screen text-white pt-[100px] bg-app-tasks bg-contain bg-repeat-round;
-}
-
-.home-layout {
-  @apply w-screen min-h-screen flex justify-center items-center text-white bg-app-home-mobile bg-cover h-[1512px]
-  tb:bg-app-home-tablet tb:h-[1366px]
-  pc2:bg-app-home pc2:h-[1800px] pc2:bg-cover
-  pc:bg-app-home pc:h-[1800px] pc:bg-cover;
-}
-
-.profile-layout {
-  @apply w-screen min-h-screen bg-app-home bg-cover bg-repeat pt-[120px] pb-10;
 }

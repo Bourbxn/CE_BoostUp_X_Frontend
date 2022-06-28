@@ -1,9 +1,7 @@
-import { useDispatch } from "react-redux";
-import { logout } from "../features/auth/authSlice";
-
 const Logout = () => {
-  const dispatch = useDispatch();
-  dispatch(logout());
+  window.localStorage.removeItem("token");
+  window.location = "/login";
+  return "";
 };
 
 export default Logout;

@@ -18,15 +18,6 @@ module.exports = {
         "black-mission-box": "#0A0E21",
         "purple-search": "#08303C",
       },
-      backgroundImage: {
-        app: "url('pictures/bgHome.png')",
-        "app-tasks": "url('pictures/bgTasks.png')",
-        "app-home": "url('pictures/bgHome.png')",
-        "app-home-mobile": "url('pictures/bgHome(mobile).jpg')",
-        "app-home-tablet": "url('pictures/bgHome(tablet).jpg')",
-        "app-css": "url('../pictures/bgHome.png')",
-      },
-
       keyframes: {
         star: {
           "0%": { transform: "scale(1, 1)", opacity: "0" },

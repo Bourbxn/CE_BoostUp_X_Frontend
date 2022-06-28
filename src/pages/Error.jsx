@@ -1,23 +1,20 @@
 import React, { Fragment, useEffect } from "react";
 import "../css/error.css";
 import "../css/star.css";
-import Starfall from "../components/Login/Starfall";
 import { useSelector, useDispatch } from "react-redux";
 import { userSelector } from "../features/auth/authSlice";
-import { fetchUser } from "../features/auth/authSlice";
-import Loading from "./Loading";
 const Error = () => {
   const dispatch = useDispatch();
-  const { err, user } = useSelector(userSelector);
+  const { error } = useSelector(userSelector);
   useEffect(() => {
-    if (!err) {
+    if (!error) {
       dispatch(fetchUser());
     }
   }, [dispatch]);
-  return user ? (
+  return (
     <Fragment>
-      <div className="starLogin relative z-10"></div>
-      <div id="notfound" className="bg-app bg-cover z-0">
+      <div className="starLogin  z-10"></div>
+      <div id="notfound" className="bg-app bg-cover z-20">
         <div className="notfound">
           <div className="notfound-404">
             <h1>404</h1>
@@ -26,8 +23,6 @@ const Error = () => {
         </div>
       </div>
     </Fragment>
-  ) : (
-    <Loading />
   );
 };
 

@@ -4,28 +4,28 @@ import axios from "axios";
 export const initialState = {
   user: null,
   error: false,
+  loading: false,
 };
 
 export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
+    setLoading: (state) => {
+      state.loading = true;
+    },
     setError: (state) => {
       state.error = true;
     },
     setCredentials: (state, action) => {
+      state.loading = false;
       state.error = false;
       state.user = action.payload;
-    },
-    logout: (state) => {
-      window.localStorage.clear();
-      state.user = null;
-      window.location = "/login";
     },
   },
 });
 
-export const { setCredentials, logout, setError } = userSlice.actions;
+export const { setCredentials, setError, setLoading } = userSlice.actions;
 export const userSelector = (state) => state.user;
 export default userSlice.reducer;
 
@@ -44,6 +44,8 @@ export function fetchUser() {
       .then((response) => {
         dispatch(setCredentials({ ...response.data }));
       })
-      .catch((err) => {});
+      .catch((err) => {
+        dispatch(setError());
+      });
   };
 }

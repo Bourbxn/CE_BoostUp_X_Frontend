@@ -8,9 +8,10 @@ const path = [
   { key: 1, name: "HOME", to: "/", class: "nav-menu" },
   { key: 2, name: "TASKS", to: "/tasks", class: "nav-menu" },
   { key: 3, name: "RANKING", to: "/ranking", class: "nav-menu" },
-  { key: 4, name: "EBOOK", to: "/ebook", class: "nav-menu" },
-  { key: 5, name: "PROFILE", to: "/profile", class: "nav-menu" },
-  { key: 6, name: "LOGOUT", to: "/logout", class: "nav-menu" },
+  { key: 4, name: "PROFILE", to: "/profile", class: "nav-menu" },
+  { key: 5, name: "EBOOK", to: "/ebook", class: "nav-menu" },
+  { key: 6, name: "GUIDE", to: "/guide", class: "nav-menu" },
+  { key: 7, name: "LOGOUT", to: "/logout", class: "nav-menu" },
 ];
 const NavLinkActive = ({ isActive }) => {
   return isActive ? "nav-menu-active" : "";

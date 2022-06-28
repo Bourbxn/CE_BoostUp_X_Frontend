@@ -43,10 +43,10 @@ const Top3Card = () => {
     }
   };
   return (
-    <div className="grid md:grid-cols-3 justify-items-center">
+    <div className="grid lg:grid-cols-3 justify-items-center">
       {rank.map((user, key) => {
         return (
-          <div key={key} className="card md:w-96 md:-my-40 my-5 bg-base-100 shadow-xl">
+          <div key={key} className="card md:w-96 lg:-my-40 my-5 bg-base-100 shadow-xl">
             <figure>
               <img src={planetImage(user.group)} alt="Shoes" />
             </figure>

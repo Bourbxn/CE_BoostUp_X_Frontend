@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import Layout from "../components/Layout";
 import "../css/loading.css";
 const Loading = () => {
   return (

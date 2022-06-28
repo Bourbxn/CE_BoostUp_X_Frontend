@@ -1,66 +1,52 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { userSelector } from "../features/auth/authSlice";
 import { fetchUser } from "../features/auth/authSlice";
 import Loading from "./Loading";
-import { useGetTopRankQuery } from "../features/api/usersSlice";
-import "../css/home.css";
 import Layout from "../components/Layout";
-import Mars from "../pictures/homeImage/Mars.png";
-import Pluto from "../pictures/homeImage/Pluto.png";
-import Jupiter from "../pictures/homeImage/Jupiter_real.png";
-import Neptune from "../pictures/homeImage/Naptune.png";
-import Saturn from "../pictures/homeImage/Saturn.png";
-import Mercury from "../pictures/homeImage/Mercury.png";
-import Rocket from "../pictures/homeImage/cloundWithRocket.png";
-import Star from "../pictures/homeImage/star.png";
+import Planet from "../components/Home/Planet";
+import RocketJet from "../pictures/homeImage/Rocket.png";
+import Top3Card from "../components/Home/Top3Card";
+import { NavLink } from "react-router-dom";
 const Home = () => {
-  // const rankQuery = useGetTopRankQuery();
-  // const dispatch = useDispatch();
-  // const userQuery = useSelector(userSelector);
-  // useEffect(() => {
-  //   if (!userQuery.error && !userQuery.loading) {
-  //     dispatch(fetchUser());
-  //   }
-  // }, [dispatch]);
+  const dispatch = useDispatch();
+  const userQuery = useSelector(userSelector);
+  useEffect(() => {
+    dispatch(fetchUser());
+  }, [dispatch]);
 
-  return (
+  return userQuery.user ? (
     <Layout>
-      <div>
-        <div className="text-center relative mt-40 z-10 hero">
-          <div className="hero-content">
-            <div className="max-w-md">
-              <h1 className="text-white md:text-3xl text-xl font-semibold">
-                Practice C Programing
-              </h1>
-              <button className="btn btn-outline btn-success my-5">
-                GET START
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="relative">
-          <div className="saturns">
-            <img src={Saturn} />
-          </div>
-          <div className="mercury">
-            <img src={Mercury} />
-          </div>
-          <div className="jupiter">
-            <img src={Jupiter} />
-          </div>
-          <div className="mars">
-            <img src={Mars} />
-          </div>
-          <div className="pluto">
-            <img src={Pluto} />
-          </div>
-          <div className="neptune">
-            <img src={Neptune} />
+      <div className="text-center relative mt-40 z-10 hero">
+        <div className="hero-content">
+          <div className="max-w-xl space-y-5">
+            <h1 className="text-white md:text-5xl text-xl font-semibold">
+              Practice C Programing
+            </h1>
+            <h1 className="text-white md:text-4xl text-lg font-semibold">
+              In 1 Week
+            </h1>
+            <button className="btn btn-outline btn-success my-5">
+              <NavLink to="/tasks">GET START</NavLink>
+            </button>
           </div>
         </div>
       </div>
+      <Planet />
+      <div className="rocketJet">
+        <img src={RocketJet} alt="" />
+      </div>
+      <div className="relative lg:-top-100">
+        <div className="text-white font-bold text-center">
+          <h1 className="md:text-5xl text-xl">Top 3 ranking</h1>
+        </div>
+      </div>
+      <div className="relative lg:-top-64 ">
+        <Top3Card />
+      </div>
     </Layout>
+  ) : (
+    <Loading />
   );
 };
 

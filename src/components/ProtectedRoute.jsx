@@ -1,8 +1,7 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
-import { currentUser } from "../service/authService";
 const ProtectedRoute = ({ children }) => {
-  const user = currentUser();
+  const user = window.localStorage.getItem("token");
   if (!user) {
     return <Navigate to="/login" replace={true} />;
   }

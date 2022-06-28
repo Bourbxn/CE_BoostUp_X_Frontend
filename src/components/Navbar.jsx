@@ -24,14 +24,14 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar z-50 md:p-4 top-0 p-5">
+      <div className="navbar z-50 md:p-4 top-0 p-5 ">
         <div className="flex space-x-3 font-bold md:pl-3 mr-auto">
           <h1 className="normal-case md:text-4xl text-3xl text-white">
             CEBOOSTUP
           </h1>
           <h1 className="normal-case md:text-6xl text-5xl text-red-logo">X</h1>
         </div>
-        <div className="flex-none hidden md:block  ml-auto">
+        <div className="flex-none hidden lg:block  ml-auto">
           <ul className="space-x-8 menu-horizontal  p-0 md:pr-3">
             {path.map((link) => {
               return (
@@ -44,7 +44,7 @@ const Navbar = () => {
             })}
           </ul>
         </div>
-        <div className="md:hidden block">
+        <div className="lg:hidden block">
           <label className="btn btn-outline btn-info swap swap-rotate justify-items-center">
             <input
               type="checkbox"

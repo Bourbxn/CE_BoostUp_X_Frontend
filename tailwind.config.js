@@ -3,13 +3,6 @@
 module.exports = {
   content: ["./src/**/*.{html,js,jsx}"],
   theme: {
-    screens: {
-      md: "960px",
-      mb: { max: "420px" },
-      tb: { min: "421px", max: "1024px" },
-      pc2: { min: "1025px", max: "1450px" },
-      pc: { min: "1451px" },
-    },
     extend: {
       colors: {
         "red-logo": "#F33B13",

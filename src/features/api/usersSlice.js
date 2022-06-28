@@ -6,17 +6,7 @@ export const usersApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: import.meta.env.VITE_BACKEND,
   }),
-  endpoints: (builder) => ({
-    getTopRank: builder.query({
-      query: () => ({
-        url: `/users/score/ranking`,
-        method: "GET",
-        headers: {
-          Authorization: token,
-        },
-      }),
-    }),
-  }),
+  endpoints: (builder) => ({}),
 });
 
-export const { useGetTopRankQuery } = usersApi;
+export const {} = usersApi;

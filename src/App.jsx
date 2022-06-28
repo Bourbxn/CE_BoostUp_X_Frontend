@@ -22,10 +22,18 @@ const App = () => {
   return (
     <BrowserRouter>
       <AppLayout>
-        {<Navbar />}
+        {user && <Navbar />}
         <Routes>
           <Route path="/login" element={<Login />} exact />
-          <Route path="/" element={<Home />} exact />
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+            exact
+          />
           <Route path="/logout" element={<Logout />} exact />
           <Route path="*" element={<Error />} exact />
         </Routes>

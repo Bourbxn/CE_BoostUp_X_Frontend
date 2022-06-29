@@ -17,7 +17,7 @@ import { useEffect } from "react";
 import jwtDecode from "jwt-decode";
 import { useDispatch } from "react-redux";
 import { setCredentials } from "../features/auth/authSlice";
-import "../css/star.css"
+import "../css/star.css";
 const schema = yup
   .object({
     username: yup.string().required(),
@@ -37,17 +37,12 @@ const Login = () => {
   const onSubmit = async (data) => {
     const res = await axios.post(
       `${import.meta.env.VITE_BACKEND}/auth/user/login`,
-      data
-    );
-    if (res.status === 200) {
-      if (typeof window !== undefined) {
-        const token = res.data.accessToken;
-        window.localStorage.setItem("token", token);
-        const user = jwtDecode(token);
-        dispatch(setCredentials({ ...user }));
-        navigate("/", { replace: true });
+      data,
+      {
+        withCredentials: true,
       }
-    }
+    );
+    console.log(res)
   };
 
   useEffect(() => {

@@ -1,5 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import getCookie from "../../hook/getCookie";
+
+const token = `Bearer ` + getCookie("token");
 
 export const initialState = {
   user: null,
@@ -33,7 +36,7 @@ const api = axios.create({
   baseURL: import.meta.env.VITE_BACKEND,
   withCredentials: false,
   headers: {
-    Authorization: `Bearer ` + window.localStorage.getItem("token"),
+    Authorization: token,
   },
 });
 

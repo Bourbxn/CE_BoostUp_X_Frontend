@@ -1,7 +1,8 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
+import getCookie from "../hook/getCookie";
 const ProtectedRoute = ({ children }) => {
-  const user = window.localStorage.getItem("token");
+  const user = getCookie("token");
   if (!user) {
     return <Navigate to="/login" replace={true} />;
   }

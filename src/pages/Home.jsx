@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { userSelector } from "../features/auth/authSlice";
 import { fetchUser } from "../features/auth/authSlice";
@@ -14,7 +14,6 @@ const Home = () => {
   useEffect(() => {
     dispatch(fetchUser());
   }, [dispatch]);
-
   return userQuery.user ? (
     <Layout>
       <div className="text-center relative mt-40 z-10 hero">

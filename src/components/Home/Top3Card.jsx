@@ -6,12 +6,13 @@ import Naptune from "../../pictures/profileImage/Naptune.png";
 import Pluto from "../../pictures/profileImage/Pluto.png";
 import Saturn from "../../pictures/profileImage/Saturn.png";
 import axios from "axios";
+import getCookie from "../../hook/getCookie";
 
 const Top3Card = () => {
   const [rank, setRanking] = useState([]);
   useEffect(() => {
     const fetchRanking = async () => {
-      const token = `Bearer ` + window.localStorage.getItem("token");
+      const token = `Bearer ` + getCookie("token");
       if (token) {
         const res = await axios.get(
           `${import.meta.env.VITE_BACKEND}/users/score/ranking`,
@@ -46,7 +47,10 @@ const Top3Card = () => {
     <div className="grid lg:grid-cols-3 justify-items-center">
       {rank.map((user, key) => {
         return (
-          <div key={key} className="card md:w-96 lg:-my-40 my-5 bg-base-100 shadow-xl">
+          <div
+            key={key}
+            className="card md:w-96 lg:-my-40 my-5 bg-base-100 shadow-xl"
+          >
             <figure>
               <img src={planetImage(user.group)} alt="Shoes" />
             </figure>

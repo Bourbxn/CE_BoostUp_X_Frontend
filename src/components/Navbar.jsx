@@ -6,7 +6,7 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const path = [
   { key: 1, name: "HOME", to: "/", class: "nav-menu" },
-  { key: 2, name: "TASKS", to: "/tasks", class: "nav-menu" },
+  { key: 2, name: "TASKS", to: "/task", class: "nav-menu" },
   { key: 3, name: "RANKING", to: "/ranking", class: "nav-menu" },
   { key: 4, name: "PROFILE", to: "/profile", class: "nav-menu" },
   { key: 5, name: "EBOOK", to: "/ebook", class: "nav-menu" },

@@ -1,6 +1,6 @@
+import removeCookie from "../hook/removeCookie";
 const Logout = () => {
-  window.localStorage.removeItem("token");
-  window.location = "/login";
+  removeCookie("token");
 };
 
 export default Logout;

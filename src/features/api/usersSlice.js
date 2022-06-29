@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import getCookie from "../../hook/getCookie";
 
-const token = `Bearer ` + window.localStorage.getItem("token");
+const token = `Bearer ` + getCookie("token");
 export const usersApi = createApi({
   reducerPath: "usersApi",
   baseQuery: fetchBaseQuery({

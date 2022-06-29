@@ -14,6 +14,8 @@ import Input from "../components/Login/Input";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import setCookie from "../hook/setCookie";
+import getCookie from "../hook/getCookie";
 import jwtDecode from "jwt-decode";
 import { useDispatch } from "react-redux";
 import { setCredentials } from "../features/auth/authSlice";
@@ -37,16 +39,19 @@ const Login = () => {
   const onSubmit = async (data) => {
     const res = await axios.post(
       `${import.meta.env.VITE_BACKEND}/auth/user/login`,
-      data,
-      {
-        withCredentials: true,
-      }
+      data
     );
-    console.log(res)
+    if (res.status === 200) {
+      const token = res.data.accessToken;
+      setCookie("token", token);
+      const user = jwtDecode(token);
+      dispatch(setCredentials({ ...user }));
+      navigate("/", { replace: true });
+    }
   };
 
   useEffect(() => {
-    if (window.localStorage.getItem("token")) {
+    if (getCookie("token")) {
       navigate("/", { replace: true });
     }
   }, []);

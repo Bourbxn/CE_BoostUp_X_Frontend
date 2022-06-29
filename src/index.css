@@ -8,7 +8,7 @@
   letter-spacing: 0.07em;
 }
 body {
-  background-color: #0B0F22;
+  background-color: #0b0f22;
 }
 
 .input-form {
@@ -20,3 +20,12 @@ body {
 ::-webkit-scrollbar {
   display: none;
 }
+.table :where(thead, tfoot) :where(th, td) {
+  --tw-bg-opacity: 1;
+  background-color: #644CF9;
+  font-size: 0.75rem /* 12px */;
+  line-height: 1rem /* 16px */;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+

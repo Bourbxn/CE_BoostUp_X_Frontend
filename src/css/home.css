@@ -82,7 +82,7 @@
 }
 
 .star04 {
-  @apply top-[1475px] right-[400px] animate-star1;
+  @apply top-[1375px] right-[400px] animate-star1;
 }
 
 .star05 {
@@ -94,7 +94,7 @@
 }
 
 .star07 {
-  @apply top-[1450px] left-[250px] animate-star2;
+  @apply top-[1350px] left-[250px] animate-star2;
 }
 
 .star08 {

@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { userSelector } from "../features/auth/authSlice";
 import { fetchUser } from "../features/auth/authSlice";
 import Loading from "./Loading";
 import Layout from "../components/Layout";
 import Planet from "../components/Home/Planet";
-import RocketJet from "../pictures/homeImage/Rocket.png";
+import RocketJet from "../pictures/Rocket.png";
 import Top3Card from "../components/Home/Top3Card";
 import { NavLink } from "react-router-dom";
 const Home = () => {

@@ -1,10 +1,10 @@
-import Mars from "../../pictures/homeImage/Mars.png";
-import Pluto from "../../pictures/homeImage/Pluto.png";
-import Jupiter from "../../pictures/homeImage/Jupiter.png";
-import Neptune from "../../pictures/homeImage/Naptune.png";
-import Saturn from "../../pictures/homeImage/Saturn.png";
-import Mercury from "../../pictures/homeImage/Mercury.png";
-import Star from "../../pictures/homeImage/Star.png";
+import Mars from "../../pictures/planet/raw/Mars.png";
+import Pluto from "../../pictures/planet/raw/Pluto.png";
+import Jupiter from "../../pictures/planet/raw/Jupiter.png";
+import Neptune from "../../pictures/planet/raw/Naptune.png";
+import Saturn from "../../pictures/planet/raw/Saturn.png";
+import Mercury from "../../pictures/planet/raw/Mercury.png";
+import Star from "../../pictures/Star.png";
 import "../../css/home.css";
 const Planet = () => {
   const stars = [

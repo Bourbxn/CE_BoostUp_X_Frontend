@@ -1,2 +1,2 @@
 # CEBUX Front-end Web
-This is grader web for computer engineering boost up x camp
+This is grader website using [React.js](https://reactjs.org/) for computer engineering boost up x camp.
